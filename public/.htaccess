@@ -1,0 +1,8 @@
+# Redirects from the previous SPA's routes. LiteSpeed honours Apache mod_rewrite rules.
+RewriteEngine On
+RewriteRule ^tc/?$ /terms/ [R=301,L]
+RewriteRule ^in-the-media/?$ /media/ [R=301,L]
+RewriteRule ^(502|504|508)/?$ / [R=302,L]
+# Keep the separate apps that live under this host untouched.
+RewriteCond %{REQUEST_URI} ^/(support|wiki|paperwallet|marketplace)(/|$)
+RewriteRule ^ - [L]

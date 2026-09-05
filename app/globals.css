@@ -1,0 +1,257 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Design tokens copied verbatim from wallet.conceal.network (production CSS, 2026-09-06). */
+:root {
+  color-scheme: dark;
+  --background: 30 9% 9%;
+  --foreground: 0 0% 100%;
+  --card: 36 9% 13%;
+  --card-foreground: 0 0% 100%;
+  --popover: 36 10% 12%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 39 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 34 8% 17%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 34 8% 17%;
+  --muted-foreground: 36 7% 64%;
+  --accent: 39 100% 50%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 34 9% 21%;
+  --input: 34 9% 21%;
+  --ring: 39 100% 50%;
+  --radius: 0.75rem;
+  --chrome: 30 10% 7%;
+  --amber-text: #ffa500;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --background: 36 38% 97%;
+  --foreground: 30 12% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 30 12% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 12% 12%;
+  --secondary: 36 24% 92%;
+  --secondary-foreground: 30 12% 18%;
+  --muted: 36 24% 92%;
+  --muted-foreground: 32 9% 38%;
+  --destructive: 0 72% 46%;
+  --border: 34 18% 85%;
+  --input: 34 18% 85%;
+  --chrome: 36 30% 95%;
+  --amber-text: #be6a04;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), 'Geist', Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chrome: hsl(var(--chrome));
+  --color-amber: var(--amber-text);
+  --color-wallet-amber: #f5a623;
+  --color-incoming: #10b981;
+  --color-outgoing: #ef4444;
+  --color-deposit: #60a5fa;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: hsl(var(--background));
+}
+
+body {
+  min-height: 100vh;
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+  background-image:
+    radial-gradient(58% 44% at 90% -8%, #ffa60012, transparent 60%),
+    radial-gradient(52% 40% at -8% 108%, #ff77000d, transparent 55%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@layer components {
+  .glass {
+    border-radius: var(--radius-xl);
+    border: 1px solid color-mix(in srgb, hsl(var(--border)) 70%, transparent);
+    background-color: color-mix(in srgb, hsl(var(--card)) 70%, transparent);
+    box-shadow:
+      inset 0 1px 0 0 #ffffff0d,
+      0 18px 60px #00000052;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  :root[data-theme='light'] .glass {
+    box-shadow:
+      0 1px 2px #221d180a,
+      0 2px 6px #221d180f;
+  }
+
+  .keycap {
+    color: orange;
+    text-shadow:
+      0 -1px 1px #000c,
+      0 1px 1px #ffffff0d;
+    background: linear-gradient(#322d28 0%, #241f1c 100%);
+    border: 1px solid #2e2924;
+    border-color: #4a433b #2e2924 #14110f;
+    border-radius: 6px;
+    font-weight: 800;
+    box-shadow:
+      0 4px 6px #0006,
+      0 1px 3px #00000080;
+  }
+  :root[data-theme='light'] .keycap {
+    color: #e67e00;
+    text-shadow:
+      0 1px 1px #fff,
+      0 -1px 1px #00000026;
+    background: linear-gradient(#fff 0%, #f7f5f2 100%);
+    border: 1px solid #eae3d8;
+    border-color: #fff #eae3d8 #dcd3c4;
+    box-shadow:
+      0 4px 6px #00000008,
+      0 1px 3px #0000000d;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amber-text);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-weight: 600;
+    padding: 0.85rem 1.6rem;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  .pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px #ffa5004d;
+  }
+
+  .pill-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in srgb, hsl(var(--border)) 80%, transparent);
+    background: color-mix(in srgb, hsl(var(--card)) 60%, transparent);
+    color: hsl(var(--foreground));
+    font-weight: 500;
+    padding: 0.8rem 1.4rem;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+  .pill-ghost:hover {
+    border-color: hsl(var(--primary) / 0.5);
+    transform: translateY(-2px);
+  }
+
+  .arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: hsl(var(--muted-foreground));
+    transition: color 0.2s ease;
+  }
+  .arrow-link:hover {
+    color: hsl(var(--foreground));
+  }
+
+  .prose-site p {
+    color: hsl(var(--muted-foreground));
+    line-height: 1.75;
+  }
+  .prose-site p + p {
+    margin-top: 1rem;
+  }
+  .prose-site strong {
+    color: hsl(var(--foreground));
+    font-weight: 600;
+  }
+  .prose-site a {
+    color: var(--amber-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.coin-hero {
+  mask-image: radial-gradient(circle at 50% 50%, #000 40%, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 40%, transparent 72%);
+}
+
+@keyframes coin-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+}
+.coin-float {
+  animation: coin-float 9s ease-in-out infinite;
+}
