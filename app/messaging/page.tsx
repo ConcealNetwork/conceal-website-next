@@ -4,16 +4,16 @@ import { Amber, ArrowLink, Glass, PageHero, PillLink, Section } from '@/componen
 import { WALLET_URL, docs } from '@/content/site';
 
 export const metadata: Metadata = {
-  title: 'Messaging — encrypted messages on the blockchain',
-  description: 'Decentralised, end-to-end encrypted messaging carried by the Conceal blockchain, with an address book and self-destructing messages.',
+  title: 'Messaging',
+  description: 'Encrypted messages carried inside Conceal transactions. Only the recipient can read them, there is no server, and they can self-destruct.',
 };
 
 const features = [
-  { icon: Flame, title: 'Self-destructing messages', body: 'Messages can delete themselves after being read — set the timer and it is gone.' },
-  { icon: MonitorSmartphone, title: 'Desktop, web or phone', body: 'Conceal Messaging works in Conceal Desktop and the web wallet, including on your smartphone.' },
-  { icon: Network, title: 'Decentralised', body: 'A decentralised service that operates on the blockchain. There is no messaging server to seize, subpoena or switch off.' },
-  { icon: BookUser, title: 'Address book', body: 'No need to copy and paste an address every time. Keep an address book and message your contacts directly.' },
-  { icon: Lock, title: 'Encrypted end to end', body: 'Every message is encrypted and can only be read by the sender and the receiver.' },
+  { icon: Flame, title: 'Self-destruct timer', body: 'Set a lifetime on a message and the wallet deletes it after it has been read. Useful for anything you would rather not have in an archive.' },
+  { icon: MonitorSmartphone, title: 'Desktop, web or phone', body: 'Conceal Desktop and the web wallet both send and receive messages. The web wallet can scan a QR code to fill in the address.' },
+  { icon: Network, title: 'No server', body: 'Messages propagate the same way transactions do, node to node. Seizing a server gets you nothing because there isn\'t one.' },
+  { icon: BookUser, title: 'Address book', body: 'Save a contact once and pick it from a list. Conceal addresses are 98 characters long, so this matters more than it sounds.' },
+  { icon: Lock, title: 'Encrypted to the recipient', body: 'The sender encrypts with the recipient\'s public key before broadcasting. Nodes relay ciphertext and nothing else.' },
 ];
 
 export default function MessagingPage() {
@@ -26,7 +26,7 @@ export default function MessagingPage() {
             Decentralised, <Amber>encrypted</Amber> messages.
           </>
         }
-        intro="Conceal Messaging expands the ecosystem with fully integrated encrypted messaging on the blockchain — private, untraceable and yours."
+        intro="A message on Conceal is a transaction carrying an encrypted payload. Only the recipient's wallet can decrypt it. There is no server in between to log it, hand it over, or go offline."
         actions={
           <>
             <PillLink href={WALLET_URL}>Send a message in the web wallet</PillLink>
@@ -46,7 +46,7 @@ export default function MessagingPage() {
             </Glass>
           ))}
           <li className="flex flex-col justify-center rounded-xl border border-dashed border-border/70 p-6">
-            <p className="text-sm text-muted-foreground">How it works under the hood, message fees and limits:</p>
+            <p className="text-sm text-muted-foreground">Fees, size limits and how the encryption works:</p>
             <ArrowLink href={docs('/messaging')} className="mt-2 text-foreground">
               Messaging guide
             </ArrowLink>

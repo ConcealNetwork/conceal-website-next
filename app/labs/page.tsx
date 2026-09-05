@@ -7,14 +7,14 @@ import { APPLY_URL, labProjects } from '@/content/labs';
 
 export const metadata: Metadata = {
   title: 'Conceal Labs',
-  description: 'Conceal Labs funds developers, entrepreneurs and creators building on Conceal. See funded projects and apply.',
+  description: 'Conceal Labs pays CCX for community software that uses the chain. Three projects so far. How to pitch yours.',
 };
 
 const steps = [
-  { icon: Lightbulb, title: 'Have an idea?', body: 'Do you have a project that involves Conceal in some way? We want to hear about it.' },
-  { icon: Coins, title: 'Would money help?', body: 'Sometimes money is just what it takes to get an idea off the ground.' },
-  { icon: Rocket, title: 'Get funded', body: 'Our creators set aside funds for the community to use for projects.' },
-  { icon: ListChecks, title: 'Get listed', body: 'Get funded by us and we will list your project here on the website.' },
+  { icon: Lightbulb, title: 'Pitch it', body: 'Anything that uses Conceal counts: a wallet feature, a game, a merchant tool, a node dashboard. Describe it in the Labs channel on Discord.' },
+  { icon: Coins, title: 'Ask for what it needs', body: 'Say how much CCX would get it built and roughly how long. Small and concrete beats large and vague.' },
+  { icon: Rocket, title: 'Build it', body: 'If the team agrees, funds are released as the work lands. The code has to be open source.' },
+  { icon: ListChecks, title: 'Get listed', body: 'Finished projects go on this page with download links, screenshots and your name on them.' },
 ];
 
 export default function LabsPage() {
@@ -24,10 +24,10 @@ export default function LabsPage() {
         eyebrow="Conceal Labs"
         title={
           <>
-            Bring your dreams <Amber>forward.</Amber>
+            Got an idea? We might <Amber>pay</Amber> for it.
           </>
         }
-        intro="We strive to grow a broad ecosystem by supporting the community. Conceal Labs gives developers, entrepreneurs and creators the jump-start they need to make a vision a reality."
+        intro="Conceal Labs is a small pot of CCX set aside by the project for community-built software. Pitch something that uses the chain, and if the team likes it, you get funded and listed here. Three projects have shipped so far."
         actions={
           <>
             <PillLink href={APPLY_URL}>Apply on Discord</PillLink>
@@ -53,7 +53,7 @@ export default function LabsPage() {
         </ol>
       </Section>
 
-      <Section id="projects" eyebrow="Projects" title="Built with Labs funding.">
+      <Section id="projects" eyebrow="Projects" title="What has been built so far.">
         <div className="space-y-10">
           {labProjects.map((p) => (
             <article key={p.id} id={p.id} className="grid gap-8 scroll-mt-24 lg:grid-cols-[1fr_1.1fr]">

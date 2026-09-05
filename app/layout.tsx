@@ -10,9 +10,9 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: `${SITE_NAME} — ${SITE_TAGLINE}`, template: `%s · ${SITE_NAME}` },
+  title: { default: `${SITE_NAME}: ${SITE_TAGLINE}`, template: `%s · ${SITE_NAME}` },
   description:
-    'Conceal is a privacy-protected, community-run network for untraceable payments, encrypted messages and interest-earning deposits. Open source. No one in charge.',
+    'Conceal is a proof-of-work blockchain for payments nobody can trace, messages nobody can read, and deposits that pay interest. Open source, run by volunteers, launched 2018.',
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,

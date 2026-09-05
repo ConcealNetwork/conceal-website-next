@@ -1,7 +1,7 @@
 export const SITE_URL =
   process.env.NEXT_PUBLIC_BASE_PATH ? `https://concealnetwork.github.io${process.env.NEXT_PUBLIC_BASE_PATH}` : 'https://conceal.network';
 export const SITE_NAME = 'Conceal Network';
-export const SITE_TAGLINE = 'Privacy-protected DeFi & encrypted communications';
+export const SITE_TAGLINE = 'private money, encrypted messages';
 
 export const WALLET_URL = 'https://wallet.conceal.network';
 export const EXPLORER_URL = 'https://explorer.conceal.network';

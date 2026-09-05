@@ -7,7 +7,7 @@ import { asset } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Donate',
-  description: 'Support Conceal development, liquidity and outreach with CCX, BTC, XMR or stablecoins on Polygon.',
+  description: 'Donate CCX, BTC, XMR or Polygon stablecoins. It pays for servers, listing fees and Labs bounties. Nobody draws a salary.',
 };
 
 export default function DonatePage() {
@@ -17,22 +17,22 @@ export default function DonatePage() {
         eyebrow="Donate"
         title={
           <>
-            Help us give <Amber>freedom</Amber> back to people.
+            Help pay for the <Amber>next</Amber> release.
           </>
         }
-        intro="Conceal is built by volunteers. Every contribution, however small, supports development, boosts liquidity, funds Labs projects and grows the community. Thank you."
+        intro="Nobody at Conceal is paid a salary. Donations cover servers, exchange listing fees, Labs bounties and the occasional audit. Any amount helps and none of it is refundable."
       />
 
       <Section className="pt-0">
         <div className="prose-site max-w-3xl">
           <p>
-            Conceal Network is a decentralised, privacy-preserving network that helps people manage their finances and communications with ease. We believe privacy is a fundamental human right, and we are working to expand a privacy-preserving ecosystem that everyone can use. Our overall vision is to give freedom back to the people and help them shield themselves from unauthorised monitoring.
+            Conceal has no treasury from a premine and no investors to lean on. What it has is a donation address and a spreadsheet. Money that comes in goes to seed nodes and the explorer, to listing fees when an exchange asks for them, to Labs bounties, and to paying someone to look at the code when a change is big enough to warrant it.
           </p>
-          <p>Send your desired amount to one of the receiving addresses below. All donations support the project so we can offer better services, boost liquidity, fund talented developers and strengthen outreach.</p>
+          <p>Pick a currency below and send whatever you like. If you want to know what a particular donation was spent on, ask in Discord and someone will tell you.</p>
         </div>
 
         <div className="mt-8">
-          <Notice>Donations are not refundable. Double-check the address and network before sending — EVM assets go to the Polygon network only.</Notice>
+          <Notice>Donations cannot be refunded, because we have no way to tell who sent them. Check the address and the network. The EVM address is on Polygon only; sending on Ethereum mainnet will not arrive.</Notice>
         </div>
 
         <ul className="mt-8 space-y-3">

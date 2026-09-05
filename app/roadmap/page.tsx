@@ -24,13 +24,13 @@ export default function RoadmapPage() {
         eyebrow="Roadmap"
         title={
           <>
-            The birth of something <Amber>amazing</Amber> — and what comes <Bold>next.</Bold>
+            Eight years <Amber>shipped.</Amber> Three more <Bold>planned.</Bold>
           </>
         }
-        intro="Conceal shipped its mainnet in May 2018 and has kept shipping since. Dates for future work are intentions, not promises: volunteers build this."
+        intro="Mainnet went live on 23 May 2018. Everything since is listed below with the quarter it landed. The future dates are guesses by volunteers with day jobs; treat them accordingly."
       />
 
-      <Section className="pt-0" eyebrow="Ahead" title="In progress and planned.">
+      <Section className="pt-0" eyebrow="Ahead" title="Being worked on now.">
         <Timeline items={next} />
       </Section>
 

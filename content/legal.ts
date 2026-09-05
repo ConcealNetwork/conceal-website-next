@@ -1,6 +1,6 @@
 export type LegalSection = { title: string; paragraphs: string[] };
 
-/** Text carried over from conceal.network/tc (typos corrected, substance unchanged). Needs a legal review pass — see docs/WEBSITE-REBUILD-PLAN.md §6. */
+/** Text carried over from conceal.network/tc (typos corrected, substance unchanged). Needs a legal review pass; see docs/WEBSITE-REBUILD-PLAN.md §6. */
 export const TERMS_LAST_REVIEWED = '2026-09-06';
 
 export const terms: LegalSection[] = [
@@ -70,7 +70,7 @@ export const terms: LegalSection[] = [
   {
     title: 'Data handling',
     paragraphs: [
-      'Conceal is committed to privacy by design. Our software does not collect or retain personal data; all transactions and communications are processed locally on your device. This website keeps only anonymised server logs, as described in the Privacy Policy.',
+      'The Conceal software does not collect personal data. Transactions and messages are built and encrypted on your device before anything is broadcast. This website keeps anonymised server logs and nothing else; the Privacy Policy lists exactly what.',
     ],
   },
 ];
@@ -81,20 +81,20 @@ export const privacy: LegalSection[] = [
   {
     title: 'What we collect',
     paragraphs: [
-      'This website keeps standard, anonymised server logs ("Log Data"): the visitor\'s IP address with the last byte replaced, browser type and version, pages visited, date and time, time spent on pages, and similar statistics. No cookies are set for tracking. The theme preference is stored in your browser\'s local storage and never sent to us.',
-      'Live figures on this site (network height, mining pools, price) are fetched by your browser directly from explorer.conceal.network and, for the price, from CoinGecko or CoinPaprika. Those services see your IP address when your browser requests the data. Embedded videos load from YouTube only after you press play.',
+      'The web server keeps ordinary access logs with the last byte of your IP address replaced, plus browser type, pages visited and timestamps. That is all. There are no analytics scripts and no tracking cookies. Your light-or-dark theme choice is saved in your own browser and never sent anywhere.',
+      'The live numbers on the home page and the Get CCX page come from explorer.conceal.network, and the price comes from CoinGecko with CoinPaprika as a fallback. Your browser fetches those directly, so those servers see your IP address. Videos are not loaded from YouTube until you press play on one.',
     ],
   },
   {
     title: 'What we use the data for',
-    paragraphs: ['Website statistics, improving content, analysing errors and finding dead links. Log Data is never sold or shared.'],
+    paragraphs: ['Counting visitors, spotting broken links and working out why a page errored. The logs are not sold or shared with anyone.'],
   },
   {
     title: 'Changes to this policy',
-    paragraphs: ['We may update this policy from time to time. Changes are posted on this page; please review it periodically.'],
+    paragraphs: ['If this page changes, the review date at the top changes with it.'],
   },
   {
     title: 'Contact',
-    paragraphs: ['Questions about this policy can be raised through the support desk.'],
+    paragraphs: ['Ask through the support desk, or in Discord.'],
   },
 ];

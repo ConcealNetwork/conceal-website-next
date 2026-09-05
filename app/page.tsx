@@ -12,32 +12,32 @@ const features = [
   {
     icon: Lock,
     title: 'Untraceable transactions',
-    body: 'One-time addresses and ring signatures make every payment unlinkable. Nobody knows where you store or spend your CCX.',
+    body: 'Every payment goes to a one-time address and is signed with a ring signature, so the chain shows neither who paid nor who was paid. Only the two of you know.',
   },
   {
     icon: MessageSquareLock,
     title: 'Encrypted messaging',
-    body: 'End-to-end encrypted messages carried by the blockchain itself, with optional self-destruct. No server in the middle.',
+    body: 'Messages ride inside transactions, encrypted so that only the recipient can open them. Set a timer and the message deletes itself after it is read. There is no messaging server to seize.',
   },
   {
     icon: Coins,
     title: 'Deposits that earn',
-    body: 'Lock CCX on-chain for one to twelve months and earn interest paid by the protocol — decentralised, egalitarian cold staking.',
+    body: 'Lock CCX for one to twelve months and the protocol pays interest at maturity. No custodian holds your coins. The deposit is a transaction on the chain, nothing more.',
   },
   {
     icon: KeyRound,
     title: 'Keys never leave your device',
-    body: 'Every wallet is open source and client-side. Your seed is generated locally and never transmitted.',
+    body: 'Every Conceal wallet is open source and generates your seed on your own device. It is never sent anywhere, which also means nobody can recover it for you. Back it up.',
   },
 ];
 
-const ecosystem = [
-  { name: 'Web wallet', href: WALLET_URL, body: 'Client-side wallet in the browser.' },
-  { name: 'Explorer', href: EXPLORER_URL, body: 'Blocks, transactions, pools and network stats.' },
+const tools = [
+  { name: 'Web wallet', href: WALLET_URL, body: 'Runs in the browser. Keys stay in your browser storage.' },
+  { name: 'Explorer', href: EXPLORER_URL, body: 'Blocks, transactions, mining pools and the numbers on this page.' },
   { name: 'Bridge', href: BRIDGE_URL, body: 'Swap CCX to wCCX on Ethereum, BNB Chain and Polygon.' },
   { name: 'Paper wallet', href: PAPER_WALLET_URL, body: 'Generate offline keys to print and store.' },
   { name: 'Marketplace', href: MARKETPLACE_URL, body: 'Buy and sell peer-to-peer with CCX.' },
-  { name: 'Docs', href: DOCS_URL, body: 'Guides for wallets, nodes, mining and the API.' },
+  { name: 'Docs', href: DOCS_URL, body: 'Wallet guides, running a node, mining, and the RPC API.' },
 ];
 
 export default function HomePage() {
@@ -58,7 +58,7 @@ export default function HomePage() {
                 Encrypted <Bold>words.</Bold>
               </h1>
               <p className="mt-7 max-w-xl text-lg text-muted-foreground md:text-xl">
-                A community-run network where untraceable payments, on-chain encrypted messages and interest-earning deposits belong to you alone. Open source. No company. No one in charge.
+                Conceal is a proof-of-work blockchain for payments nobody can trace, messages nobody can read, and deposits that pay interest without a bank. Volunteers run it. There is no company, and nobody can switch it off.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-5">
                 <PillLink href="/wallets">Get a wallet</PillLink>
@@ -87,7 +87,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <Section eyebrow="Why Conceal" title={<>Quiet by design. <Bold>Yours</Bold> by default.</>}>
+      <Section eyebrow="What it does" title={<>Four things the chain does that a bank <Bold>can&rsquo;t.</Bold></>}>
         <ul className="grid gap-4 md:grid-cols-2">
           {features.map(({ icon: Icon, title, body }) => (
             <Glass as="li" key={title}>
@@ -104,8 +104,8 @@ export default function HomePage() {
       <Section
         id="wallets"
         eyebrow="Wallets"
-        title={<>One network. <Amber>Five</Amber> ways in.</>}
-        intro="Every Conceal wallet is open source and keeps your keys on your device. Pick the one that fits how you use CCX."
+        title={<>Five wallets. <Amber>Same</Amber> rules.</>}
+        intro="All five are open source and keep your keys on your device. Desktop and Core sync the whole chain; the web wallet, mobile app and paper wallet don't need to."
       >
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {wallets.map((w) => (
@@ -123,7 +123,7 @@ export default function HomePage() {
             </Glass>
           ))}
           <li className="flex flex-col justify-center rounded-xl border border-dashed border-border/70 p-6">
-            <p className="text-sm text-muted-foreground">Not sure which one?</p>
+            <p className="text-sm text-muted-foreground">Don&rsquo;t know which one you want?</p>
             <ArrowLink href={docs('/start-here/choose-a-wallet')} className="mt-2 text-foreground">
               Choose a wallet guide
             </ArrowLink>
@@ -137,8 +137,8 @@ export default function HomePage() {
       <Section
         id="earn"
         eyebrow="Earn"
-        title={<>Deposits paid by the <Amber>protocol</Amber>, not a platform.</>}
-        intro="Lock CCX on-chain for a term you choose and earn interest — up to 6 % APR for twelve-month deposits at the highest tier. No custodian, no counterparty."
+        title={<>Interest paid by the <Amber>protocol.</Amber></>}
+        intro="Pick a term from one to twelve months. The chain locks your CCX until then and pays the interest with the principal. A twelve-month deposit of 20,000 CCX or more earns 6 % APR. There is no counterparty to default."
       >
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
           <div className="glass p-6">
@@ -161,13 +161,13 @@ export default function HomePage() {
           <div className="flex flex-col justify-center">
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /> Three tiers by principal; every extra month of term adds 0.1 % APR.
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /> Base APR depends on the amount (2.9 %, 3.9 % or 4.9 %). Each extra month of term adds 0.1 %.
               </li>
               <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /> Funds are cold-staked on the blockchain and returned automatically at maturity.
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /> The coins sit in the deposit on-chain and unlock at maturity. Withdraw them from the wallet whenever you like after that.
               </li>
               <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /> Available in Conceal Desktop and the web wallet.
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /> Open a deposit from Conceal Desktop or the web wallet.
               </li>
             </ul>
             <div className="mt-6 flex flex-wrap gap-4">
@@ -181,8 +181,8 @@ export default function HomePage() {
       <Section
         id="messaging"
         eyebrow="Messaging"
-        title={<>Messages that live on the chain — and <Amber>vanish</Amber> when you say so.</>}
-        intro="Conceal Messaging is fully integrated encrypted messaging on the blockchain: private, decentralised, untraceable, with an address book and self-destructing messages."
+        title={<>Messages that <Amber>vanish</Amber> when you say so.</>}
+        intro="A Conceal message is a small transaction with an encrypted payload. Only the recipient's wallet can decrypt it, and you can give it a self-destruct timer. There is an address book so you don't have to paste addresses."
       >
         <div className="flex flex-wrap gap-4">
           <GhostLink href="/messaging">Learn about messaging</GhostLink>
@@ -190,12 +190,12 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="get-ccx" eyebrow="Get CCX" title={<>Mine it, buy it, or <Amber>swap</Amber> it.</>}>
+      <Section id="get-ccx" eyebrow="Get CCX" title={<>Every coin was <Amber>mined.</Amber> Here&rsquo;s how to get some.</>}>
         <ul className="grid gap-4 md:grid-cols-3">
           {[
-            { icon: Pickaxe, title: 'Mine', body: `100 % proof of work on ${networkFacts.algorithm}. Fair for GPUs, hostile to ASICs. Point any supported miner at a pool and go.`, href: '/get-ccx#mine' },
-            { icon: ShoppingCart, title: 'Buy', body: 'CCX trades on centralised exchanges against BTC and USDT.', href: '/get-ccx#buy' },
-            { icon: Repeat, title: 'Swap wCCX', body: 'Wrapped CCX lives on Ethereum, BNB Chain and Polygon. Bridge in and out any time.', href: '/get-ccx#swap' },
+            { icon: Pickaxe, title: 'Mine', body: `${networkFacts.algorithm} runs well on ordinary graphics cards and badly on ASICs, which is the point. Paste a pool address into a miner and you are mining.`, href: '/get-ccx#mine' },
+            { icon: ShoppingCart, title: 'Buy', body: 'Two exchanges list CCX against BTC and USDT. Neither is an endorsement.', href: '/get-ccx#buy' },
+            { icon: Repeat, title: 'Swap wCCX', body: 'wCCX is an ERC-20 token on Ethereum, BNB Chain and Polygon. The bridge converts it to CCX and back.', href: '/get-ccx#swap' },
           ].map(({ icon: Icon, title, body, href }) => (
             <Glass as="li" key={title}>
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-amber">
@@ -214,9 +214,9 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Ecosystem" title="Everything runs in the open.">
+      <Section eyebrow="Tools" title="Everything else the project runs.">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {ecosystem.map((e) => (
+          {tools.map((e) => (
             <li key={e.href}>
               <a href={e.href} target="_blank" rel="noopener noreferrer" className="glass block h-full p-5 transition hover:border-primary/40">
                 <span className="font-medium">{e.name} ↗</span>
@@ -241,10 +241,10 @@ export default function HomePage() {
           <div>
             <Eyebrow className="mb-4">Community</Eyebrow>
             <h2 className="text-3xl font-light tracking-tight md:text-4xl">
-              No one owns Conceal. <Bold>Everyone</Bold> can take part.
+              Nobody owns this. <Bold>Anyone</Bold> can help run it.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Development, support and decisions happen in the open with volunteers from all four corners of the world. Come say hello.
+              Code review, support tickets and roadmap arguments all happen in public. The people doing it are volunteers in a dozen time zones. Discord is where most of it starts.
             </p>
           </div>
           <div className="flex flex-col justify-center gap-4 md:items-end">

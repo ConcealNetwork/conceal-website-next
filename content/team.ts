@@ -56,7 +56,7 @@ export const team: TeamMember[] = [
     name: 'nullcrypto',
     role: 'Lead Developer',
     image: '/images/team/nullcrypto.png',
-    bio: 'I just build things — full stack.',
+    bio: 'I just build things. Full stack.',
     github: 'https://github.com/nullcryptodev',
     x: 'https://x.com/_nullcrypto',
   },

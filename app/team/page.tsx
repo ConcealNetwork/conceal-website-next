@@ -8,7 +8,7 @@ import { asset } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Team',
-  description: 'The volunteers who develop, support and grow Conceal — organised as a DAO with no company or legal entity behind it.',
+  description: 'The nine volunteers who write the code, answer the tickets and run the servers. There is no company behind them.',
 };
 
 export default function TeamPage() {
@@ -18,10 +18,10 @@ export default function TeamPage() {
         eyebrow="Team"
         title={
           <>
-            <Amber>Alone</Amber> we can do so little; <Bold>together</Bold> we can do so much.
+            Nine people, <Amber>no</Amber> payroll.
           </>
         }
-        intro="The Conceal team is a group of dedicated volunteers from the community who have committed time and energy to the development, marketing and community-building of the network."
+        intro="Everyone below is a volunteer who turned up in the community and stayed. Some write Core, some answer support tickets, some argue on Twitter. None of them are employed by Conceal, because there is no Conceal to be employed by."
       />
 
       <Section className="pt-0">
@@ -57,13 +57,13 @@ export default function TeamPage() {
         </ul>
       </Section>
 
-      <Section eyebrow="How we work" title="A DAO, not a company.">
+      <Section eyebrow="How it works" title="A DAO, which means a Discord and some rules.">
         <div className="prose-site max-w-3xl">
           <p>
-            Conceal team members operate as a DAO — a decentralised autonomous organisation. Each member takes on the tasks they can specialise in, voluntarily and without any third party or legal body. To organise day-to-day operations, the team has created divisions with separate responsibilities so members can specialise in the overall development and growth of the network.
+            There is no legal entity. Decisions get proposed in the team channels, argued about, and voted on. Whoever has the skill for a task picks it up: Core changes go to the developers, community questions to the community leads, and infrastructure to whoever is awake when it breaks. That last one happens more than we would like.
           </p>
           <p>
-            Team members are spread across many geographical locations, which makes organising events and online gatherings tricky — but not impossible. Anyone can join as long as they are willing to commit time to the Conceal ecosystem and have the skills to help it succeed.
+            The team is spread across enough time zones that a live meeting is rare. Most coordination is asynchronous and written down, which turns out to be a decent way to run a project nobody is paid for. If you want in, the bar is simple: show up, do useful work for a while, and someone will ask you to join.
           </p>
         </div>
         <div className="mt-8 flex flex-wrap items-center gap-5">

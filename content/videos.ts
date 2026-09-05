@@ -9,7 +9,7 @@ export const featuredVideos: Video[] = [
 export const communityVideos: Video[] = [
   { id: 'TfykuINNsCI', title: 'Everything you need to know about Conceal Crypto (CCX)!', author: 'Your Friend Andy', thumb: '/images/media/video_10.jpg' },
   { id: 'oY5ZzJFoe4E', title: 'Mineable cryptocurrency integrates decentralized finance!', author: 'VoskCoin', thumb: '/images/media/video_00.jpg' },
-  { id: 'iFRMyPSjWt8', title: 'Conceal LIVE — P2P, E2E encrypted messaging', author: 'SavageMine', thumb: '/images/media/video_01.jpg' },
+  { id: 'iFRMyPSjWt8', title: 'Conceal LIVE: P2P, end-to-end encrypted messaging', author: 'SavageMine', thumb: '/images/media/video_01.jpg' },
   { id: 'Wp2QO8b4LmI', title: 'How to transfer money in the middle of the ocean in 2 seconds', author: 'Turan Khan', thumb: '/images/media/video_02.jpg' },
   { id: 'zE7h95nBOl8', title: 'Conceal (CCX) core team chat', author: 'SavageMine', thumb: '/images/media/video_03.jpg' },
   { id: 'eOto88-wZB0', title: 'Cold-staking! Earn interest on your crypto', author: 'SavageMine', thumb: '/images/media/video_04.jpg' },
@@ -21,7 +21,7 @@ export const communityVideos: Video[] = [
 ];
 
 export const miningVideos: Video[] = [
-  { id: 'niTcmIz_sf0', title: 'Mining Conceal — getting started', author: 'Conceal' },
+  { id: 'niTcmIz_sf0', title: 'Mining Conceal: getting started', author: 'Conceal' },
   { id: '2jBL4uzrimk', title: 'Conceal Network overview', author: 'Conceal' },
-  { id: 'Ze2ioyBHPIw', title: 'Mining Conceal — best practices', author: 'Conceal' },
+  { id: 'Ze2ioyBHPIw', title: 'Mining Conceal: best practices', author: 'Conceal' },
 ];

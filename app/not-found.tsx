@@ -8,7 +8,7 @@ export default function NotFound() {
       <h1 className="mt-4 text-4xl font-light tracking-tight md:text-6xl">
         Properly <span className="text-amber">concealed.</span>
       </h1>
-      <p className="mt-4 max-w-md text-muted-foreground">That page doesn&rsquo;t exist, or moved when the site was rebuilt.</p>
+      <p className="mt-4 max-w-md text-muted-foreground">There is nothing at this address. It may have moved when the site was rebuilt in 2026; the old routes are listed in the footer.</p>
       <div className="mt-8 flex flex-wrap gap-4">
         <Link href="/" className="pill">
           Back home

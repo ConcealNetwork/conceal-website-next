@@ -6,7 +6,7 @@ import { asset } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: "Concealer's Manifesto",
-  description: 'Privacy is not a privilege. It is a right. The principles that guide the Concealers.',
+  description: 'Eight things the people building Conceal believe, starting with: privacy is a right, not a privilege.',
 };
 
 function renderInline(text: string) {
@@ -32,12 +32,12 @@ export default function ManifestoPage() {
             The Concealer&rsquo;s <Amber>Manifesto</Amber>
           </>
         }
-        intro="Inheritors of the Cypherpunk legacy, carrying its fire into the present and the future."
+        intro="Eight things the people building Conceal believe. Written by the community, argued over, and left mostly alone since."
       />
       <Container className="pb-16">
         <Image
           src={asset('/images/manifesto/privacy_cypherpunk.png')}
-          alt="Privacy — cypherpunk illustration"
+          alt="Cypherpunk illustration"
           width={1200}
           height={600}
           className="glass w-full object-cover p-0"

@@ -6,7 +6,7 @@ import { DISCORD_URL, SUPPORT_URL, socials } from '@/content/site';
 
 export const metadata: Metadata = {
   title: 'Community',
-  description: 'Official Conceal channels: Discord, Telegram, X, YouTube, Medium, Substack, GitHub, BitcoinTalk and the marketplace.',
+  description: 'The official Conceal channels, and how to spot the impersonators. Discord is where most of the work happens.',
 };
 
 export default function CommunityPage() {
@@ -16,10 +16,10 @@ export default function CommunityPage() {
         eyebrow="Community"
         title={
           <>
-            Improving the world <Amber>together.</Amber>
+            Where the <Amber>work</Amber> happens.
           </>
         }
-        intro="Conceal has a thriving community of people sharing ideas, working together and helping each other regardless of where they are in their blockchain journey. What are you waiting for?"
+        intro="Conceal has no office. Discord is the office. Bug reports, release announcements, wallet help and arguments about the roadmap all happen in the channels below, in public, most hours of the day."
         actions={
           <>
             <PillLink href={DISCORD_URL}>Join the Discord</PillLink>
@@ -28,7 +28,7 @@ export default function CommunityPage() {
         }
       />
 
-      <Section className="pt-0" eyebrow="Official channels" title={<>Only trust <Bold>these</Bold> links.</>} intro="Impersonation is the most common scam in crypto communities. Staff will never DM you first, and will never ask for your seed phrase, keys or password.">
+      <Section className="pt-0" eyebrow="Official channels" title={<>Only trust <Bold>these</Bold> links.</>} intro="The most common scam we see is someone copying a team member's name and avatar, then DMing new arrivals. Nobody from Conceal will message you first, and nobody will ever ask for your seed, keys or password. If it happens, screenshot it and post it in the server.">
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {socials.map((s) => {
             const Icon = socialIcons[s.id] ?? ShoppingBag;
@@ -49,10 +49,10 @@ export default function CommunityPage() {
         </ul>
       </Section>
 
-      <Section eyebrow="Trade & markets" title="Looking for exchanges?">
-        <p className="max-w-2xl text-muted-foreground">Exchange listings, market-data sites and DEX pairs for wrapped CCX now live on one page together with mining.</p>
+      <Section eyebrow="Trade" title="Looking for exchanges?">
+        <p className="max-w-2xl text-muted-foreground">Exchanges, price trackers and the wCCX DEX pairs moved to the Get CCX page, next to the mining instructions.</p>
         <div className="mt-5">
-          <ArrowLink href="/get-ccx#buy">Get CCX — buy & swap</ArrowLink>
+          <ArrowLink href="/get-ccx#buy">Get CCX: buy and swap</ArrowLink>
         </div>
       </Section>
     </>

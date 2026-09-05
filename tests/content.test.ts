@@ -116,3 +116,32 @@ test('format helpers', () => {
   assert.equal(timeAgo(0, 3_600_000), '1h ago');
   assert.equal(timeAgo(0, 90_000_000), '1d ago');
 });
+
+test('site copy avoids em dashes and stock AI vocabulary (manifesto and team bios are community-authored and exempt)', async () => {
+  const { readFileSync, readdirSync, statSync } = await import('node:fs');
+  const root = join(import.meta.dirname, '..');
+  const files: string[] = [];
+  const walk = (dir: string) => {
+    for (const name of readdirSync(dir)) {
+      const full = join(dir, name);
+      if (statSync(full).isDirectory()) walk(full);
+      else if (/\.(tsx?|ts)$/.test(name)) files.push(full);
+    }
+  };
+  walk(join(root, 'app'));
+  walk(join(root, 'components'));
+  walk(join(root, 'content'));
+  const exempt = /content\/(manifesto|team)\.ts$/;
+  const vocab = /\b(additionally|crucial|delve|enduring|fostering|garner|interplay|intricate|pivotal|showcas(e|ing)|tapestry|testament|underscore|vibrant|leverag(e|es|ing)|utiliz(e|es|ing)|facilitat(e|es|ing)|seamless(ly)?|robust|empower(s|ing)?|beacon|thriving|cutting-edge|groundbreaking|game-changing|unlock(s|ing)? the (power|potential)|in today's|journey)\b/i;
+  for (const file of files) {
+    if (exempt.test(file)) continue;
+    const src = readFileSync(file, 'utf8');
+    for (const [i, line] of src.split('\n').entries()) {
+      if (line.includes('—') && !/'—'|`—`|\/\*|^\s*\/\//.test(line)) {
+        assert.fail(`${file.replace(root, '')}:${i + 1} em dash in copy`);
+      }
+      const m = line.match(vocab);
+      if (m && !/^\s*(import|\/\/|\*)/.test(line)) assert.fail(`${file.replace(root, '')}:${i + 1} stock vocabulary "${m[0]}"`);
+    }
+  }
+});

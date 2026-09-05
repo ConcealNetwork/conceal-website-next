@@ -8,7 +8,7 @@ import { asset } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Wallets',
-  description: 'Conceal Desktop, Core, Web, Mobile and Paper wallets — all open source, all keep your keys on your device.',
+  description: 'Desktop, Core, web, Android and paper wallets for CCX. All open source. All generate the seed on your device.',
 };
 
 export default function WalletsPage() {
@@ -18,10 +18,10 @@ export default function WalletsPage() {
         eyebrow="Wallets"
         title={
           <>
-            One network. <Amber>Five</Amber> ways in. Your keys <Bold>every time.</Bold>
+            Five wallets. Your keys, <Amber>every</Amber> time.
           </>
         }
-        intro="Every Conceal wallet is open source and client-side. Your seed is generated on your device and never transmitted. Pick the one that fits how you use CCX."
+        intro="All of them are open source and generate the seed on your own machine. Two of them download the whole chain; three of them don't. That is most of the difference."
         actions={
           <>
             <PillLink href="https://wallet.conceal.network">Open web wallet</PillLink>
@@ -32,7 +32,7 @@ export default function WalletsPage() {
 
       <Section className="pt-0">
         <Notice>
-          <strong>Back up your seed before you send anything.</strong> Nobody — including the Conceal team — can recover a wallet without it. Staff will never ask for your seed phrase, private keys or wallet password.{' '}
+          <strong>Write down your seed before you send anything.</strong> Nobody can recover a wallet without it, including the people who wrote the software. If anyone asks you for it, they are not from Conceal.{' '}
           <a href={docs('/backup-and-security')} className="text-amber underline underline-offset-4" target="_blank" rel="noopener noreferrer">
             Backup & security guide
           </a>
@@ -75,9 +75,9 @@ export default function WalletsPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Verify" title="Check what you download.">
+      <Section eyebrow="Verify" title="Check the file before you run it.">
         <p className="max-w-2xl text-muted-foreground">
-          Releases are published on GitHub under the ConcealNetwork organisation. Verify checksums and signatures before installing, and only download from links on this site, the docs, or the official GitHub releases.
+          Releases live on GitHub under the ConcealNetwork organisation and nowhere else. Each one ships with checksums. Compare them before you install, and treat any download link from a chat message or an ad as fake until proven otherwise.
         </p>
         <div className="mt-5 flex flex-wrap gap-4">
           <ArrowLink href={docs('/releases-and-verification')}>Releases & verification</ArrowLink>

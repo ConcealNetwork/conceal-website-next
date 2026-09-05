@@ -9,7 +9,7 @@ import { OFFICIAL_POOL, miners } from '@/content/mining';
 import { BRIDGE_URL, docs, networkFacts } from '@/content/site';
 
 export const metadata: Metadata = {
-  title: 'Get CCX — mine, buy or swap',
+  title: 'Get CCX',
   description: 'Mine CCX with a GPU, buy it on an exchange, or swap wrapped CCX on Ethereum, BNB Chain and Polygon. Pools, miner configs and contract addresses.',
 };
 
@@ -20,10 +20,10 @@ export default function GetCcxPage() {
         eyebrow="Get CCX"
         title={
           <>
-            Mine it, buy it, or <Amber>swap</Amber> it.
+            Mine it, buy it, or <Amber>swap</Amber> for it.
           </>
         }
-        intro={`CCX is 100 % proof of work on ${networkFacts.algorithm}. There was no premine and no ICO; every coin in circulation was mined.`}
+        intro={`Every CCX in circulation was mined with ${networkFacts.algorithm}. There was no premine and no token sale. If you don't want to mine, two exchanges list it and wrapped CCX trades on three EVM chains.`}
         actions={
           <>
             <ArrowLink href="#mine">Mine</ArrowLink>
@@ -37,7 +37,7 @@ export default function GetCcxPage() {
         <PriceStrip />
       </Section>
 
-      <Section id="mine" eyebrow="Mine" title={<>Fair for GPUs. <Bold>Hostile</Bold> to ASICs.</>} intro="Point a supported miner at a pool with your wallet address as the username. Solo mining with Conceal Core is also possible.">
+      <Section id="mine" eyebrow="Mine" title={<>Graphics cards <Bold>welcome.</Bold> ASICs, less so.</>} intro="Put a pool address and your wallet address into any miner below and start it. Conceal Core can also mine solo, which is slower but needs no pool.">
         <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-4">
             <Glass>
@@ -45,7 +45,7 @@ export default function GetCcxPage() {
               <div className="mt-3">
                 <CopyField value={OFFICIAL_POOL} label="pool address" />
               </div>
-              <p className="mt-3 text-xs text-muted-foreground">Stratum, no TLS, password <span className="font-mono">x</span>. Algorithm names differ by miner: <span className="font-mono">cn/gpu</span>, <span className="font-mono">cngpu</span>, <span className="font-mono">cryptonight_gpu</span>.</p>
+              <p className="mt-3 text-xs text-muted-foreground">Stratum, no TLS, password <span className="font-mono">x</span>. Each miner calls the algorithm something different: <span className="font-mono">cn/gpu</span>, <span className="font-mono">cngpu</span> or <span className="font-mono">cryptonight_gpu</span>.</p>
             </Glass>
             <Glass>
               <p className="eyebrow">Community pools</p>
@@ -73,7 +73,7 @@ export default function GetCcxPage() {
         </div>
       </Section>
 
-      <Section id="buy" eyebrow="Buy" title="Exchanges and market data.">
+      <Section id="buy" eyebrow="Buy" title="Where it trades.">
         <div className="grid gap-6 md:grid-cols-2">
           <Glass>
             <p className="eyebrow">Exchanges</p>
@@ -102,16 +102,16 @@ export default function GetCcxPage() {
             </ul>
           </Glass>
         </div>
-        <p className="mt-4 text-xs text-muted-foreground">Listings are provided for convenience and are not endorsements. Do your own research before using any exchange.</p>
+        <p className="mt-4 text-xs text-muted-foreground">These are the venues we know about, not a recommendation. An exchange holds your coins until you withdraw them. Withdraw them.</p>
       </Section>
 
-      <Section id="swap" eyebrow="Swap wCCX" title={<>Wrapped CCX on <Amber>three</Amber> chains.</>} intro="wCCX is an ERC-20 representation of CCX. Use the Conceal Bridge to move between CCX and wCCX, then trade on any DEX that lists the token.">
+      <Section id="swap" eyebrow="Swap wCCX" title={<>wCCX on <Amber>three</Amber> chains.</>} intro="wCCX is an ERC-20 token backed one-to-one by CCX held by the bridge. Send CCX to the bridge and get wCCX on Ethereum, BNB Chain or Polygon, or the reverse. Then trade it on any DEX that has a pool.">
         <Notice>
-          Always check the contract address before you trade. Fake tokens with the same name exist. Bridge at{' '}
+          Check the contract address before you trade. Tokens named wCCX that are not these contracts exist and are worthless. The only bridge is{' '}
           <a href={BRIDGE_URL} target="_blank" rel="noopener noreferrer" className="text-amber underline underline-offset-4">
             bridge.conceal.network
-          </a>{' '}
-          only.
+          </a>
+          .
         </Notice>
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           {chains.map((c) => (

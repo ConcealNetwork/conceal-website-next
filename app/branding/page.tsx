@@ -20,7 +20,7 @@ const logos = [
 ];
 
 const palette = [
-  { name: 'Amber', hex: '#FFA500', hsl: '39 100% 50%', role: 'Primary accent — one word per headline, buttons, eyebrows', swatch: 'bg-[#FFA500]' },
+  { name: 'Amber', hex: '#FFA500', hsl: '39 100% 50%', role: 'The accent. One word per headline, buttons, eyebrow labels', swatch: 'bg-[#FFA500]' },
   { name: 'Ink', hex: '#1A1715', hsl: '30 9% 9%', role: 'Dark background', swatch: 'bg-[#1A1715]' },
   { name: 'Card', hex: '#25211E', hsl: '36 9% 13%', role: 'Glass card base (70 % + blur)', swatch: 'bg-[#25211E]' },
   { name: 'Parchment', hex: '#FAF8F4', hsl: '36 38% 97%', role: 'Light background', swatch: 'bg-[#FAF8F4]' },
@@ -46,10 +46,10 @@ export default function BrandingPage() {
             The look of <Amber>privacy.</Amber>
           </>
         }
-        intro="Conceal: to keep secret, or hidden from view. Backgrounds are darkened and warm; text is quiet; amber is used sparingly, for the one word that matters. Though much is hidden, what lies underneath is special."
+        intro="Logos, colours and fonts for anyone writing about Conceal or building on it. Dark, warm backgrounds. Quiet text. Amber for one word per headline and nothing else. If in doubt, use less."
       />
 
-      <Section className="pt-0" eyebrow="Logo" title="The mark.">
+      <Section className="pt-0" eyebrow="Logo" title="The mark, and the coin.">
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
           <div className="grid grid-cols-2 gap-4">
             <div className="glass flex aspect-square items-center justify-center bg-black p-8">
@@ -75,13 +75,13 @@ export default function BrandingPage() {
               ))}
             </ul>
             <p className="mt-4 text-xs text-muted-foreground">
-              Keep clear space of at least the mark&rsquo;s width around the logo. Don&rsquo;t recolour, outline, skew or add effects to the mark. The amber edge glow belongs to the coin render only.
+              Leave clear space around the logo at least as wide as the mark itself. Don&rsquo;t recolour it, outline it, tilt it or put a glow on it. The amber edge belongs to the coin render and stays there.
             </p>
           </Glass>
         </div>
       </Section>
 
-      <Section eyebrow="Colour" title={<>Amber on warm <Bold>neutrals.</Bold></>} intro="Different colours tell different stories. Conceal's story is told in brushed metal and a single warm accent. These tokens are shared with the web wallet.">
+      <Section eyebrow="Colour" title={<>Amber on warm <Bold>greys.</Bold></>} intro="One accent colour, used sparingly, on backgrounds that are warm rather than pure black. The web wallet uses exactly these values, so anything built with them will match.">
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {palette.map((c) => (
             <Glass as="li" key={c.name} className="p-3">
@@ -108,7 +108,7 @@ export default function BrandingPage() {
         </details>
       </Section>
 
-      <Section eyebrow="Type" title="Geist, and Geist Mono for the numbers.">
+      <Section eyebrow="Type" title="Geist for words, Geist Mono for numbers.">
         <div className="grid gap-4 md:grid-cols-2">
           <Glass>
             <p className="eyebrow">Geist · headlines & UI</p>
@@ -117,7 +117,7 @@ export default function BrandingPage() {
               <br />
               Patiently <Bold>yours.</Bold>
             </p>
-            <p className="mt-4 text-sm text-muted-foreground">Large, light headlines with one amber word and one bold word. Body copy at regular weight.</p>
+            <p className="mt-4 text-sm text-muted-foreground">Headlines are big and light, with one word in amber and one in bold. Body text is regular weight and never grey-on-grey.</p>
           </Glass>
           <Glass>
             <p className="eyebrow">Geist Mono · numbers, hashes, labels</p>
@@ -125,11 +125,11 @@ export default function BrandingPage() {
               48,250.00 <span className="text-base text-amber">CCX</span>
             </p>
             <p className="mt-1 font-mono text-xs text-muted-foreground">ccx7Mi9osGEi…LRo · last block 2m ago</p>
-            <p className="mt-4 text-sm text-muted-foreground">Everything that is a value — amounts, addresses, timestamps, eyebrow labels — is set in mono.</p>
+            <p className="mt-4 text-sm text-muted-foreground">Amounts, addresses, hashes, timestamps and the small uppercase labels are all set in mono. If it is a value rather than a sentence, it is mono.</p>
           </Glass>
         </div>
         <p className="mt-6 text-sm text-muted-foreground">
-          Print and long-form brand fonts remain{' '}
+          For print and long documents the older brand fonts still apply:{' '}
           <a href="https://fonts.google.com/specimen/Poppins" className="text-amber underline underline-offset-4" target="_blank" rel="noopener noreferrer">
             Poppins
           </a>

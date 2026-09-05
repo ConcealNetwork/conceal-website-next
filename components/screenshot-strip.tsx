@@ -13,7 +13,7 @@ export function ScreenshotStrip({ images, alt }: { images: string[]; alt: string
     <figure className="glass p-3">
       <div className="relative flex items-center justify-center overflow-hidden rounded-lg bg-background/60" style={{ minHeight: 320 }}>
         {/* eslint-disable-next-line @next/next/no-img-element -- screenshots with varying aspect ratios */}
-        <img src={asset(images[i])} alt={`${alt} — screenshot ${i + 1} of ${images.length}`} className="max-h-[420px] w-auto max-w-full object-contain" loading="lazy" />
+        <img src={asset(images[i])} alt={`${alt}, screenshot ${i + 1} of ${images.length}`} className="max-h-[420px] w-auto max-w-full object-contain" loading="lazy" />
         {images.length > 1 && (
           <>
             <button type="button" onClick={() => go(-1)} aria-label="Previous screenshot" className="keycap absolute left-2 top-1/2 -translate-y-1/2 p-2">

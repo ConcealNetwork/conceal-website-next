@@ -9,7 +9,7 @@ export default function PrivacyPage() {
     <LegalPage
       eyebrow="Legal"
       title="Privacy Policy"
-      intro="A privacy project should be able to explain its own website in a few paragraphs. Here they are."
+      intro="What this website records about you, which is not much, and which other servers your browser talks to when you load it."
       sections={privacy}
       reviewed={PRIVACY_LAST_REVIEWED}
     />

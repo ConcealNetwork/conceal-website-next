@@ -5,7 +5,7 @@ import { communityVideos, featuredVideos, miningVideos } from '@/content/videos'
 
 export const metadata: Metadata = {
   title: 'Media & videos',
-  description: 'Videos about Conceal from the team and the community — overviews, wallets, deposits and mining.',
+  description: 'Videos about Conceal: overviews, wallet walkthroughs, deposits and mining, from the team and from other people.',
 };
 
 export default function MediaPage() {
@@ -15,14 +15,14 @@ export default function MediaPage() {
         eyebrow="In the media"
         title={
           <>
-            Going <Amber>noticed</Amber>, not <Bold>concealed.</Bold>
+            People have made <Amber>videos.</Amber>
           </>
         }
-        intro="Conceal has sparked a lot of videos. We gathered them in one place. Videos load from YouTube only after you press play."
+        intro="Overviews, wallet walkthroughs, mining guides and a few interviews, from the team and from people who found the project on their own. Nothing loads from YouTube until you press play."
         actions={<ArrowLink href="https://www.youtube.com/channel/UC_YtRUcy0FR0yIc3H6DDxuw">Conceal on YouTube</ArrowLink>}
       />
 
-      <Section className="pt-0" eyebrow="Featured" title="Start here.">
+      <Section className="pt-0" eyebrow="Featured" title="If you only watch one.">
         <div className="grid gap-4 md:grid-cols-3">
           {featuredVideos.map((v) => (
             <VideoCard key={v.id} video={v} large />
@@ -30,7 +30,7 @@ export default function MediaPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Community" title="What people are saying.">
+      <Section eyebrow="Community" title="Made by other people.">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {communityVideos.map((v) => (
             <VideoCard key={v.id} video={v} />
@@ -38,7 +38,7 @@ export default function MediaPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Mining" title="Learn to mine CCX." intro="Conceal is 100 % proof of work. Learn how to mine it and the best practices for doing so.">
+      <Section eyebrow="Mining" title="How to mine it." intro="Setting up a miner, picking a pool, and the mistakes everyone makes the first time.">
         <div className="grid gap-4 md:grid-cols-3">
           {miningVideos.map((v) => (
             <VideoCard key={v.id} video={v} />

@@ -9,7 +9,7 @@ export default function TermsPage() {
     <LegalPage
       eyebrow="Legal"
       title="Terms & Conditions"
-      intro="Conceal is community software with no company behind it. Please read what that means before you rely on it."
+      intro="There is no company behind Conceal, which changes what you can expect from it. Read this before you rely on the software for anything that matters."
       sections={terms}
       reviewed={TERMS_LAST_REVIEWED}
     />

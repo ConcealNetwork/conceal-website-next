@@ -5,16 +5,16 @@ import { Amber, ArrowLink, Glass, Notice, PageHero, PillLink, Section } from '@/
 import { WALLET_URL, docs } from '@/content/site';
 
 export const metadata: Metadata = {
-  title: 'Earn — blockchain deposits',
-  description: 'Lock CCX on-chain for a term you choose and earn interest paid by the protocol. Estimate a deposit and see the tiers.',
+  title: 'Earn',
+  description: 'Lock CCX for one to twelve months and the protocol pays interest at maturity, up to 6 % APR. Rate table and calculator.',
 };
 
 const rows = [
-  { icon: Blocks, title: 'Built on the blockchain', body: 'Conceal Earn is completely decentralised and built on the Conceal blockchain — there is no platform, custodian or counterparty.' },
-  { icon: Landmark, title: 'Deposit for interest', body: 'Anyone in the world can deposit CCX in exchange for interest, from any Conceal wallet that supports deposits.' },
-  { icon: Globe, title: 'Worldwide access', body: 'Millions of people have no access to financial services. Conceal Earn provides that access to anyone, anywhere.' },
-  { icon: ShieldCheck, title: 'Funds stay safe', body: 'Deposited funds are cold-staked on the blockchain for safekeeping and returned automatically at maturity.' },
-  { icon: Percent, title: 'More than a savings account', body: 'Deposits earn significantly more than a typical savings account — as much as 6 % APR for the longest term at the highest tier.' },
+  { icon: Blocks, title: 'It is a transaction', body: 'A deposit is a special transaction type in Conceal Core. The lock, the term and the interest are all enforced by consensus rules, so there is no platform that could go bust.' },
+  { icon: Landmark, title: 'Anyone can open one', body: 'There is no account, no KYC and no minimum beyond one CCX. Open a deposit from Conceal Desktop or the web wallet.' },
+  { icon: Globe, title: 'Works anywhere', body: 'A phone and an internet connection are the whole requirement. Nobody checks where you live.' },
+  { icon: ShieldCheck, title: 'Coins never leave your keys', body: 'The locked coins are still yours; the chain just refuses to let them move until maturity. Lose your seed and you lose the deposit, same as any other balance.' },
+  { icon: Percent, title: 'Up to 6 % APR', body: 'Base rate is 2.9 %, 3.9 % or 4.9 % depending on the amount. Every month of term past the first adds 0.1 %, so a 12-month deposit of 20,000 CCX or more earns 6 %.' },
 ];
 
 export default function EarnPage() {
@@ -24,10 +24,10 @@ export default function EarnPage() {
         eyebrow="Earn"
         title={
           <>
-            <Amber>Blockchain</Amber>-powered deposits.
+            Interest from the <Amber>chain</Amber>, not a bank.
           </>
         }
-        intro="Conceal Earn removes unnecessary intermediaries by giving everyone the power to deposit funds on the blockchain and receive interest in exchange."
+        intro="A deposit is a transaction that locks CCX for a term you choose, one to twelve months. When the term ends the protocol pays the interest along with the principal. No custodian is involved at any point."
         actions={
           <>
             <PillLink href={WALLET_URL}>Open a deposit in the web wallet</PillLink>
@@ -50,15 +50,15 @@ export default function EarnPage() {
         </ul>
       </Section>
 
-      <Section id="calculator" eyebrow="Calculator" title="Run the numbers.">
+      <Section id="calculator" eyebrow="Calculator" title="Work out a deposit.">
         <DepositCalculator />
         <div className="mt-6">
           <Notice>
-            Deposit terms, displayed rates and service availability can change. Treat the rate shown in your wallet on the day you deposit as the offer that applies, and read the{' '}
+            These are the rates the site showed on the date above. The wallet shows the rate that applies when you actually open a deposit; if the two disagree, the wallet is right. Read the{' '}
             <a href={docs('/earn-and-deposits')} target="_blank" rel="noopener noreferrer" className="text-amber underline underline-offset-4">
               deposits guide
             </a>{' '}
-            for lock-up and risk considerations. Nothing here is financial advice.
+            before locking anything for a year. CCX has a price, and it moves. Nothing here is financial advice.
           </Notice>
         </div>
       </Section>

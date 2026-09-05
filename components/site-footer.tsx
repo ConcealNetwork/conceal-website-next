@@ -29,7 +29,7 @@ export function SiteFooter() {
               <span className="text-[17px] font-semibold tracking-tight">Conceal</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              A privacy-protected network for money and messages. Community-run, open source, no one in charge.
+              A blockchain for private payments and encrypted messages. Open source, run by volunteers, nobody in charge.
             </p>
             <ul className="mt-6 flex flex-wrap gap-2" aria-label="Social links">
               {socials
@@ -69,7 +69,7 @@ export function SiteFooter() {
         </Container>
         <Container className="flex flex-col gap-2 border-t border-border/60 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>© 2017–{year} Conceal.Network, Conceal DAO, Conceal Team & Conceal Developers. All rights reserved.</p>
-          <p className="font-mono">MIT licensed · Built by volunteers</p>
+          <p className="font-mono">MIT licence · no company · no premine</p>
         </Container>
       </div>
     </footer>

@@ -23,8 +23,8 @@ export const wallets: Wallet[] = [
     name: 'Conceal Desktop',
     kind: 'Full-node graphical wallet',
     summary:
-      'The central point of interaction for the primary features of Conceal, available for all major platforms. Send and receive CCX and encrypted messages, and manage your deposits.',
-    bestFor: 'Everyday use on a computer, with the full chain under your control.',
+      'The full desktop wallet for Windows, Linux and macOS. It runs its own node, so it downloads the whole chain once and verifies everything itself. Sends, receives, messages and deposits are all in one window.',
+    bestFor: 'A computer you use regularly, and not minding the initial sync.',
     image: '/images/desktop-wallet.png',
     imageAlt: 'Conceal Desktop wallet showing balance, deposits and recent activity',
     downloads: [
@@ -39,8 +39,8 @@ export const wallets: Wallet[] = [
     name: 'Conceal Web Wallet',
     kind: 'Client-side web wallet',
     summary:
-      'Runs in your browser on any device. Completely client-side: your encrypted wallet keys are stored on your device and never leave it. The perfect lightweight alternative to a full node.',
-    bestFor: 'Quick access from any device without syncing the chain.',
+      'Runs in the browser and talks to public nodes instead of syncing the chain. Keys are generated in the page and stored encrypted in your browser, and the server never sees them. Open it, unlock it, done.',
+    bestFor: 'Any device, right now, without a download.',
     image: '/images/web-wallet.png',
     imageAlt: 'Conceal web wallet',
     downloads: [{ label: 'Open web wallet', href: WALLET_URL, platform: 'web' }],
@@ -51,8 +51,8 @@ export const wallets: Wallet[] = [
     name: 'Conceal Core',
     kind: 'Full-node command-line wallet',
     summary:
-      'The heart of the peer-to-peer privacy-preserving network: a full local node with daemon, wallet and RPC tools.',
-    bestFor: 'Node operators, miners, integrators and anyone scripting against the chain.',
+      'The daemon, the command-line wallet and the RPC server. This is what every other wallet talks to, and what miners and exchanges run.',
+    bestFor: 'Running a node, mining solo, or scripting against the RPC.',
     image: '/images/core-cli.jpg',
     imageAlt: 'Conceal Core command-line wallet',
     downloads: [
@@ -66,8 +66,8 @@ export const wallets: Wallet[] = [
     id: 'mobile',
     name: 'Conceal Mobile',
     kind: 'Lite wallet for Android',
-    summary: 'A wrapped version of the web wallet packaged for Android, available as an APK or from F-Droid.',
-    bestFor: 'CCX on the go.',
+    summary: 'The web wallet packaged as an Android app. Same code, same keys-on-device model, installed from F-Droid or as an APK. iPhone users get the web wallet in Safari instead.',
+    bestFor: 'A phone.',
     downloads: [
       { label: 'Android APK', href: 'https://github.com/ConcealNetwork/conceal-wallet-cordova/releases/latest', platform: 'android' },
       { label: 'F-Droid', href: 'https://f-droid.org/packages/com.concealnetwork.concealmobile/', platform: 'android' },
@@ -79,8 +79,8 @@ export const wallets: Wallet[] = [
     id: 'paper',
     name: 'Paper Wallet',
     kind: 'Offline key generator',
-    summary: 'The easiest way to create an offline wallet with simple key-generation tools you can print and store.',
-    bestFor: 'Cold storage and gifts.',
+    summary: 'A page that generates a keypair in your browser for you to print. Load it offline for the paranoid version. Nothing is stored anywhere except the paper.',
+    bestFor: 'Long-term storage, or coins you want to hand to someone.',
     downloads: [{ label: 'Generate a paper wallet', href: PAPER_WALLET_URL, platform: 'web' }],
     docsHref: docs('/wallets/paper-wallet'),
   },

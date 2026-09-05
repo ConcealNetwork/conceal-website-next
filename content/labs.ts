@@ -15,7 +15,7 @@ export const labProjects: LabProject[] = [
     id: 'authenticator',
     name: 'Conceal Authenticator',
     summary: [
-      'A secure 2FA (two-factor authentication) app that leverages the Conceal Network blockchain to securely back up your 2FA shared keys using a built-in lite wallet.',
+      'A two-factor authentication app that backs up your 2FA secrets to the Conceal blockchain through a built-in lite wallet. Lose the phone and the codes come back with the seed.',
     ],
     links: [
       { label: 'GitHub', href: 'https://github.com/Acktarius/Conceal-2fa-app/', kind: 'github' },
@@ -30,7 +30,7 @@ export const labProjects: LabProject[] = [
     id: 'privacy-defensor',
     name: 'Privacy Defensor',
     summary: [
-      'An online arcade game inspired by the 80s that demonstrates a use case of the Conceal Faucet API. Players can be rewarded with 1 CCX — ideal for fuelling transactions in the Conceal Authenticator app.',
+      'An 80s-style arcade shooter that pays out 1 CCX through the Conceal Faucet API. Built to show what the API can do, and to give Authenticator users a coin to pay their first transaction fee with.',
     ],
     links: [{ label: 'Play the game', href: 'https://privacydefensor.nodesandbits.tech/', kind: 'play' }],
     screenshots: [1, 2, 3].map((i) => `/images/labs/privacydefensor_0${i}.png`),
@@ -39,8 +39,8 @@ export const labProjects: LabProject[] = [
     id: 'assistant',
     name: 'Conceal Assistant',
     summary: [
-      'An application to oversee and manage your CCX-Box node and miner operations. It checks the status of the associated services and lets you activate or deactivate them from any device.',
-      'The CCX-Box is a small form-factor PC that runs a Conceal full node and miner out of the box. Managed remotely with Conceal Assistant, this dedicated node earns CCX over time.',
+      'A small web app for watching and controlling a CCX-Box from another device. It shows whether the node and miner services are running and lets you stop or start them.',
+      'The CCX-Box itself is a small PC preloaded with a Conceal node and a miner. Plug it in, leave it on, and it mines and relays blocks.',
     ],
     links: [
       { label: 'GitHub', href: 'https://github.com/Acktarius/conceal-assistant', kind: 'github' },
