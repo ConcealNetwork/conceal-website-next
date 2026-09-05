@@ -1,6 +1,8 @@
-# conceal-website
+# conceal-website-next
 
-The rebuilt public site for https://conceal.network — Next.js 16 static export, Tailwind 4, Geist, using the design tokens of wallet.conceal.network.
+The rebuilt public site for https://conceal.network. **Preview:** https://concealnetwork.github.io/conceal-website-next/
+
+This repo is the proposed replacement for [ConcealNetwork/conceal-website](https://github.com/ConcealNetwork/conceal-website) (the current Vite SPA). It is kept separate so the production repo is untouched while the rebuild is reviewed. — Next.js 16 static export, Tailwind 4, Geist, using the design tokens of wallet.conceal.network.
 
 * Plan and current-site audit: [docs/WEBSITE-REBUILD-PLAN.md](docs/WEBSITE-REBUILD-PLAN.md)
 * Verbatim inventory of the old site's content: [docs/reference/current-site/CONTENT-INVENTORY.md](docs/reference/current-site/CONTENT-INVENTORY.md)

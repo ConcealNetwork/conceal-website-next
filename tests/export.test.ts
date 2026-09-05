@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { test } from 'node:test';
 
 const OUT = join(import.meta.dirname, '..', 'out');
-const BASE = process.env.GITHUB_PAGES === 'true' ? 'https://concealnetwork.github.io/conceal-website' : 'https://conceal.network';
+const BASE = process.env.GITHUB_PAGES === 'true' ? 'https://concealnetwork.github.io/conceal-website-next' : 'https://conceal.network';
 const pages = ['', 'about', 'manifesto', 'wallets', 'earn', 'messaging', 'get-ccx', 'roadmap', 'team', 'community', 'labs', 'media', 'donate', 'branding', 'terms', 'privacy'];
 
 test('static export exists (run `npm run build` first)', () => {

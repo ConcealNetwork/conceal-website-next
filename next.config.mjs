@@ -1,6 +1,6 @@
-// GITHUB_PAGES=true builds the preview at https://concealnetwork.github.io/conceal-website/.
+// GITHUB_PAGES=true builds the preview at https://concealnetwork.github.io/conceal-website-next/.
 // The production build for conceal.network runs without it (site served from the domain root).
-const basePath = process.env.GITHUB_PAGES === 'true' ? '/conceal-website' : '';
+const basePath = process.env.GITHUB_PAGES === 'true' ? '/conceal-website-next' : '';
 
 /** @type {import('next').NextConfig} */
 const config = {
